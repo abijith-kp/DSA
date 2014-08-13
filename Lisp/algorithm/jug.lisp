@@ -1,0 +1,23 @@
+;; ( <size5> <size3> )
+
+;; returns a list of lists
+(defun processL (x y)
+    (progn (if (> (+ x y) 5)
+               (setq t1 (list 5 (- (+ x y) 5)))
+               (setq t1 (list (+ x y) 0)))
+            (if (> (+ x y) 3)
+               (setq t2 (list (- (+ x y) 3) 3))
+               (setq t2 (list 0 (+ x y))))
+            (setq t3 (remove-duplicates (list (list 5 y) (list x 3) (list 0 y) (list x 0) t1 t2) :test #'equal))
+            (delete (list x y) t3 :test #'equal)))
+
+(defun jug (x y z)
+    (if (= x 4)
+        (print (cons (list x y) z))
+        (progn (setq t1 (processL x y))
+               (dolist (t2 t1)
+                   (if (not (member t2 z :test #'equal))
+                       (jug (first t2) (second t2) (remove-duplicates (cons (list x y) z) :test #'equal))
+                       ())
+                   )
+               )))
