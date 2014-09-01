@@ -1,0 +1,16 @@
+CURRENT STATUS:
+===============
+
+    * encoding works
+
+    * decoding partially works
+
+    * output is always written into binary files
+
+TO-DO:
+======
+
+    * include verbose
+
+    * size issues(compression not working)
+
