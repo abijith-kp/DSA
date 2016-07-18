@@ -1,16 +1,13 @@
 CURRENT STATUS:
 ===============
 
-    * encoding works
+* Encoding and Decoding works
 
-    * decoding partially works
-
-    * output is always written into binary files
+* Encoding is recorded into output file as charactors
 
 TO-DO:
 ======
 
-    * include verbose
+* Encoding output should be in binary
 
-    * size issues(compression not working)
-
+* Have to see if compression is working properly
